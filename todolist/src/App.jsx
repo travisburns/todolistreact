@@ -11,6 +11,16 @@ function App() {
     setTasks(prevState => [...prevState, task])
   }
 
+ const updateTask = (id) => {
+  setTasks(prevState => prevState.map(t => (
+    t.id == id
+     ? {...t, checked: !t.checked }
+     : t 
+    )))
+
+ }
+
+
   const deleteTask = (id) => {
     setTasks(prevState => prevState.filter(t => t.id !== id));
   }
@@ -24,6 +34,7 @@ function App() {
       {tasks && (
         <TaskList
           tasks={tasks}
+          updateTask={updateTask}
           deleteTask={deleteTask}
         />
       )}

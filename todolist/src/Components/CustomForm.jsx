@@ -51,18 +51,21 @@
 // export default CustomForm
 
 
-import React from 'react'
+import React, {useState} from 'react'
+import { PlusIcon } from '@heroicons/react/24/solid'
 
-const CustomForm = () => {
-
+const CustomForm = ({addTask}) => {
+const [task, setTask] = useState("")
 
   const handleFormSubmit = (e) => {
         e.preventDefault();
        addTask({
            name: task,
          checked: false,
-          id: Date.now()
+          id: Date.now(),
         })
+        setTask("")
+      }
 
   return (
     <div>
@@ -83,7 +86,7 @@ const CustomForm = () => {
          />
         <label
         htmlFor="task"
-         lassName="label"
+         className="label"
         >
           Enter Task
        </label>
@@ -99,5 +102,6 @@ const CustomForm = () => {
     </div>
   )
 }
-}
+
+
 export default CustomForm

@@ -46,27 +46,50 @@
 // export default TaskList
 
 
-import React from 'react'
-import TaskItem from './TaskItem';
-import styles from './TaskList.module.css';
+// import React from 'react'
+// import TaskItem from './TaskItem';
+// import styles from './TaskList.module.css';
 
-const TaskList = ({tasks, deleteTask, toggleTask, enterEditMode}) => {
+// const TaskList = ({tasks, deleteTask, toggleTask, enterEditMode}) => {
+//   return (
+//     <div>
+//       <ul className='styles.tasks'>
+//       {
+//         tasks.sort((a, b) => b.id - a.id).map(task => (
+//           <TaskItem 
+//           key={task.id}
+//           task={task}
+//           deleteTask = {deleteTask}
+//           toggleTask = {toggleTask}
+//           enterEditMode={enterEditMode}
+//           />
+//         ))
+//       }
+//       </ul>
+//     </div>
+//   )
+// }
+
+// export default TaskList
+
+
+import TaskItem from './TaskItem'
+
+import styles from './TaskList.module.css'
+
+const TaskList = ({tasks}) => {
+  
   return (
-    <div>
-      <ul className='styles.tasks'>
-      {
-        tasks.sort((a, b) => b.id - a.id).map(task => (
-          <TaskItem 
+    <ul className={styles.tasks}>
+      {tasks.sort((a, b) => b.id -a.id).map(task => (
+        <TaskItem 
           key={task.id}
           task={task}
-          deleteTask = {deleteTask}
-          toggleTask = {toggleTask}
-          enterEditMode={enterEditMode}
-          />
-        ))
+        />
+      ))
+
       }
-      </ul>
-    </div>
+    </ul>
   )
 }
 

@@ -158,13 +158,14 @@
 
 import React from 'react'
 import CustomForm from './components/CustomForm';
-
+import TaskList from './components/TaskList';
 
 
 const App = () => {
+  const [tasks, setTasks] = useState([]);
 
   const addTask = (task) => {
-    console.log(task)
+    setTasks(prevState => [...prevState, task])
   }
 
 
@@ -173,7 +174,8 @@ const App = () => {
       <header>
         <h1>My task List</h1>
       </header>
-      <CustomForm />
+      <CustomForm addTask={addTask}/>
+      {tasks && <TaskList tasks={tasks}/>}
     </div>
   )
 }

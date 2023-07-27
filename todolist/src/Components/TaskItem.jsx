@@ -173,7 +173,7 @@ const TaskItem = ({task, deleteTask, toggleTask, enterEditMode }) => {
           className={`btn ${styles.delete}`}
           aria-label={`Delete ${task.name} Task`}
           onClick={() => deleteTask(task.id)}
-          
+         
         >
           <TrashIcon width={24} height={24} />
         </button>

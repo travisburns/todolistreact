@@ -156,7 +156,7 @@
 
 // export default App
 
-import React from 'react'
+import React, {useState} from 'react'
 import CustomForm from './components/CustomForm';
 import TaskList from './components/TaskList';
 
@@ -170,7 +170,7 @@ const App = () => {
 
 
   return (
-    <div>
+    <div className='container'>
       <header>
         <h1>My task List</h1>
       </header>

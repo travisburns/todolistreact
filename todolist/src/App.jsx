@@ -169,7 +169,7 @@ const App = () => {
   }
 
   const deleteTask = (id) => {
-    setTasks(prevState => prevState.filter(t => t.id !== id));
+    setTasks(prevState => [prevState.filter(t => t.id !== id)])
   }
 
 

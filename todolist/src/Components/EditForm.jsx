@@ -127,3 +127,4 @@ const EditForm = ({ editedTask, updateTask, closeEditMode }) => {
   )
 }
 export default EditForm
+

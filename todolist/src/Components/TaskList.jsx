@@ -77,7 +77,7 @@ import React from 'react'
 import TaskItem from './TaskItem';
 import styles from './TaskList.module.css';
 
-const TaskList = ({tasks, deleteTask, toggleTask, enterEditMode}) => {
+const TaskList = ({tasks, deleteTask, updateTask, enterEditMode}) => {
   return (
     <div>
       <ul className='styles.tasks'>
@@ -87,7 +87,7 @@ const TaskList = ({tasks, deleteTask, toggleTask, enterEditMode}) => {
           key={task.id}
           task={task}
           deleteTask={deleteTask}
-          toggleTask={toggleTask}
+          updateTask={updateTask}
           enterEditMode={enterEditMode}
           />
         ))

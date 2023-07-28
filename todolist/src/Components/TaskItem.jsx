@@ -131,12 +131,12 @@ import { CheckIcon  } from '@heroicons/react/24/outline';
 import { PencilSquareIcon  } from '@heroicons/react/24/outline';
 import { TrashIcon } from '@heroicons/react/24/outline';
 
-const TaskItem = ({task, deleteTask, toggleTask,  enterEditMode }) => {
+const TaskItem = ({task, deleteTask, updateTask,  enterEditMode }) => {
   const [isChecked, setIsChecked ] = useState(task.checked);
 
   const handleCheckboxChange = (e) =>{
     setIsChecked(!isChecked);
-    toggleTask(task.name)
+    updateTask(task.name)
   }
  
   return (

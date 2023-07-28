@@ -173,7 +173,11 @@ const App = () => {
  }
 
 
-
+const toggleTask = (id) => {
+  setTasks(prevState => prevState.map((t => t.id === task.id ?{name: task.name} 
+    : t
+    )))
+}
  
 
 
@@ -183,7 +187,7 @@ const App = () => {
         <h1>My task List</h1>
       </header>
       <CustomForm addTask={addTask}/>
-      {tasks && <TaskList tasks={tasks} deleteTask={deleteTask}/>}
+      {tasks && <TaskList tasks={tasks} deleteTask={deleteTask} toggleTask={toggleTask}/>}
     </div>
   )
 }

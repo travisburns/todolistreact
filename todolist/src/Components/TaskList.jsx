@@ -87,7 +87,7 @@ const TaskList = ({tasks, deleteTask, toggleTask, enterEditMode}) => {
           key={task.id}
           task={task}
           deleteTask={deleteTask}
-          toggleTask = {toggleTask}
+          toggleTask={toggleTask}
           enterEditMode={enterEditMode}
           />
         ))

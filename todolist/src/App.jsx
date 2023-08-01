@@ -156,75 +156,128 @@
 
 // export default App
 
-import React, {useState} from 'react'
-import CustomForm from './components/CustomForm';
-import TaskList from './components/TaskList';
-import EditForm from './components/EditForm';
+// import React, {useState} from 'react'
+// import CustomForm from './components/CustomForm';
+// import TaskList from './components/TaskList';
+// import EditForm from './components/EditForm';
+
+// const App = () => {
+//   const [tasks, setTasks] = useState([]);
+//   const [setPreviousFocusEl, setSetPreviousFocusEl] = useState(null);
+//   const [editedTask, setEditedTask] = useState([]);
+//   const [isEditing, setIsEditing] = useState([]);
+
+
+//   const addTask = (task) => {
+//     setTasks(prevState => [...prevState, task])
+//   }
+
+//   const deleteTask = (id) => {
+//     setTasks(prevState => prevState.filter(t => t.id !== id));
+//   }
+
+//   const toggleTask = (id) => {
+//     setTasks(prevState => prevState.map(t => (
+//       t.id === id
+//         ? { ...t, checked: !t.checked }
+//         : t
+//     )))
+//   }
+
+//   const updateTask = (task) => {
+//     setTasks(prevState => prevState.map(t => (
+//       t.id === task.id
+//         ? { ...t, name: task.name }
+//         : t
+//     )))
+   
+//   }
+
+
+// const CloseEditMode = (task) => {
+//   setIsEditing(false);
+//   previousFocusEl.focus(); 
+// }
+
+
+//  const enterEditMode = (task) => {
+//     setEditedTask(task);
+//     setIsEditing(true);
+//     setPreviousFocusEl(doucment.activeElement)
+//  }
+
+
+//   return (
+//     <div className='container'>
+//       <header>
+//         <h1>My task List</h1>
+//       </header>
+//       {  
+//          isEditing && (
+//           <EditForm  
+//           editedTask={editedTask}
+//           updateTask={updateTask}
+    
+//           />
+//          )
+        
+//       }
+     
+//       <CustomForm addTask={addTask}/>
+//       {tasks && (
+//       <TaskList 
+//       tasks={tasks} 
+//       deleteTask={deleteTask} 
+//       toggleTask={toggleTask}
+//       enterEditMode={enterEditMode}
+//       />
+//     )}
+    
+//       </div>
+ 
+//   )
+//   }
+// export default App
+
+
+
+
+// import { useState } from 'react'
+
+// function App() {
+//   const [count, setCount] = useState(0)
+
+//   return (
+//     <div className="App">
+
+//     </div>
+//   )
+// }
+
+// export default App
+
+
+import React from 'react'
 
 const App = () => {
-  const [tasks, setTasks] = useState([]);
-  const [editedTask, setEditedTask] = useState([]);
-  const [isEditing, setIsEditing] = useState([]);
+
+const addTask = (task) => {
+  console.log(task)
+}
 
 
-  const addTask = (task) => {
-    setTasks(prevState => [...prevState, task])
-  }
-
-  const deleteTask = (id) => {
-    setTasks(prevState => prevState.filter(t => t.id !== id));
-  }
-
-  const toggleTask = (id) => {
-    setTasks(prevState => prevState.map(t => (
-      t.id === id
-        ? { ...t, checked: !t.checked }
-        : t
-    )))
-  }
-
-  const updateTask = (task) => {
-    setTasks(prevState => prevState.map(t => (
-      t.id === task.id
-        ? { ...t, name: task.name }
-        : t
-    )))
-   
-  }
-
- const enterEditMode = (task) => {
-    setEditedTask(task);
- }
+  
 
 
   return (
     <div className='container'>
       <header>
-        <h1>My task List</h1>
+        <h1>My Task List</h1>
       </header>
-      {  
-         isEditing && (
-          <EditForm  
-          editedTask={editedTask}
-          updateTask={updateTask}
-    
-          />
-         )
-        
-      }
-     
-      <CustomForm addTask={addTask}/>
-      {tasks && (
-      <TaskList 
-      tasks={tasks} 
-      deleteTask={deleteTask} 
-      toggleTask={toggleTask}
-      enterEditMode={enterEditMode}
-      />
-    )}
-    
-      </div>
- 
+      <CustomForm addTask={addTask} />
+      
+    </div>
   )
-  }
+}
+
 export default App

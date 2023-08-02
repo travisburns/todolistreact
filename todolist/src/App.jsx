@@ -258,24 +258,24 @@
 
 
 import React from 'react'
+import CustomForm from './Components/CustomForm'
+
+//custom components
 
 const App = () => {
 
-const addTask = (task) => {
+
+  const addTask = (task) => {
   console.log(task)
-}
-
-
-  
-
+  }
 
   return (
     <div className='container'>
       <header>
-        <h1>My Task List</h1>
+      <h1>My Task List</h1>
       </header>
-      <CustomForm addTask={addTask} />
       
+      <CustomForm  addTask={addTask}/>
     </div>
   )
 }

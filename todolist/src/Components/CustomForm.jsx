@@ -223,7 +223,20 @@
 import React, {useState} from 'react'
 import { PlusIcon } from '@heroicons/react/24/solid'
 
-const CustomForm = (addTask) => {
+
+//setup the Custom form outline as a function that equals the addTask property and returns a hook of task setTask to equal a empty string
+//create a function handleFormSubmit that equals a event listener that returns the preventDefault. 
+//addTask returns its parameters, name, checked, id. 
+//Create setTask to equal a empty string. 
+
+//then return a form with the classname todo and has a onSubmit equal to the handleFormSubmit
+//then write on the input with the attributes, type, id, classname = input. value, onInput, required, autofocus, manxlength, placeholder
+//create the lavel and its appropriate attributes htmlfor, 
+//Enter task should be made as the text between the label. 
+//Create a button that has the classname of btn, aria label, type equal to submit, 
+//Import plusicon.
+//End
+const CustomForm = ({addTask}) => {
   const [task, setTask] = useState("");
   
   const handleFormSubmit = (e) => {

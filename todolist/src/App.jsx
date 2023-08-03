@@ -275,12 +275,19 @@
   //return a div of container className that contains a header. Within the header exists a h1 with the name my Task List
   //below the header exists The CustomForm component with the passed property of addTask equaling addTask
 
-import React from 'react'
+
+  //part 3 set a hook with tasks set tasks equal to an array within usestate
+  //part 3 within addTasks set setTasks prevstate to return and arry with the spread of prevstate applied to task
+  //part 3 add tasks true render task list with the props tasks equal to task. 
+import React, {useState} from 'react'
 import CustomForm from './components/CustomForm'
+import TaskList from './components/TaskList'
 const App = () => {
-  
+ const [tasks, setTasks] = useState([]);
+
+
   const addTask = (task) => {
-    console.log(task)
+    setTasks(prevState => [...prevState, task])
   }
 
 
@@ -292,6 +299,7 @@ const App = () => {
         <h1>Task List</h1>
       </header>
       <CustomForm  addTask={addTask}/>
+      {tasks && <TaskList tasks={tasks}/>  }
     </div>
   )
 }

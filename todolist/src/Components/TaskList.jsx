@@ -79,22 +79,26 @@
 // part 3 within the ul, create a object bracket and create a tasks.map that maps task and returns TaskItem with parameters key equal to task.id, task equal to task
 //part 3 wrap the tasks.map in a tasks.sort where parameters a.b exist and return b.id - a.id in order to sort. 
 
-import React from 'react'
-import TaskItem from './TaskItem'
+
+
+
+// component import
+import TaskItem from './TaskItem';
+
+// styles
+import styles from './TaskList.module.css';
+
 const TaskList = ({tasks}) => {
-  
   return (
-    <div>
-      <ul className='styles.tasks'>
-      {
-        tasks.sort((a,b) => (b.id -a.id ).map(task => <TaskItem 
-          key='task.id'
+    <ul className={styles.tasks}>
+      {tasks.sort((a, b) => b.id - a.id).map(task => (
+        <TaskItem
+          key={task.id}
           task={task}
-        /> ))
+        />
+      ))
       }
-      </ul>
-    </div>
+    </ul>
   )
 }
-
 export default TaskList

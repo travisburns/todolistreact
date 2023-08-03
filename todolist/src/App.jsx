@@ -275,26 +275,26 @@
   //return a div of container className that contains a header. Within the header exists a h1 with the name my Task List
   //below the header exists The CustomForm component with the passed property of addTask equaling addTask
 
-
-
 import React from 'react'
-import CustomForm from './Components/CustomForm'
-
+import CustomForm from './components/CustomForm'
 const App = () => {
   
   const addTask = (task) => {
     console.log(task)
   }
 
+
   
   return (
+    
     <div className='container'>
-       <header>
-        <h1>My Task List</h1>
-        <CustomForm addTask={addTask}/>
-        </header> 
+      <header>
+        <h1>Task List</h1>
+      </header>
+      <CustomForm  addTask={addTask}/>
     </div>
   )
 }
 
 export default App
+

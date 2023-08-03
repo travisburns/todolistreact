@@ -277,25 +277,24 @@
 
 
 
-
- import React from 'react'
+import React from 'react'
 import CustomForm from './Components/CustomForm'
- 
- const App = () => {
-   
+
+const App = () => {
+  
   const addTask = (task) => {
     console.log(task)
-   }
+  }
+
   
   return (
-     <div className='Container'>
+    <div className='container'>
        <header>
         <h1>My Task List</h1>
-       </header>
-       <CustomForm addTask={addTask}/>
-     </div>
-   )
- }
- 
- export default App
- 
+        <CustomForm addTask={addTask}/>
+        </header> 
+    </div>
+  )
+}
+
+export default App

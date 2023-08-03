@@ -257,29 +257,48 @@
 // export default App
 
 
-import React from 'react'
-import CustomForm from './Components/CustomForm'
+
+
+
+
+
+
+
 
 //custom components
-///set up app component
-const App = () => {
+///set up app component -
 
-//set up a function that takes in the parameter task and returns a console of the task for now
-  const addTask = (task) => {
-  console.log(task)
-  }
+
+//set up a function that takes in the parameter task and returns a console of the task for now -
+ 
 
   //return a div of container className that contains a header. Within the header exists a h1 with the name my Task List
   //below the header exists The CustomForm component with the passed property of addTask equaling addTask
-  return (
-    <div className='container'>
-      <header>
-      <h1>My Task List</h1>
-      </header>
-      
-      <CustomForm  addTask={addTask}/>
-    </div>
-  )
-}
 
-export default App
+
+
+
+  import React from 'react'
+import CustomForm from './Components/CustomForm'
+  
+  const App = () => {
+
+    const addTask = (task) => {
+      console.log(task)
+    }
+
+    return (
+      <div className='container'>
+        <header>
+          <h1>My Task List</h1>
+        </header>
+        <CustomForm 
+          addTask={addTask}
+        
+        />
+      </div>
+    )
+  }
+  
+  export default App
+  

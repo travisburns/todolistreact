@@ -299,6 +299,15 @@
    const deleteTask = (id) => {
     setTasks(prevState => prevState.filter(t => t.id != id) )
    }
+
+   const toggleTask = (id) => {
+    setTasks(prevState => prevState.map(t => (
+      t.id === id
+      ? {...t, checked: !t.checked}
+      : t
+    )))
+   }
+
   
     return (
       <div className="container">
@@ -310,6 +319,7 @@
           <TaskList
             tasks={tasks}
             deleteTask={deleteTask}
+            toggleTask={toggleTask}
           />
         )}
       </div>

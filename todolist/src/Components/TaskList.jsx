@@ -86,7 +86,7 @@
 import React from 'react'
 import TaskItem from './TaskItem'
 
-const TaskList = ({tasks, deleteTask}) => {
+const TaskList = ({tasks, deleteTask, toggleTask}) => {
   return (
 
       <ul className='styles.tasks'>
@@ -95,6 +95,7 @@ const TaskList = ({tasks, deleteTask}) => {
             key={task.id}
             task={task}
             deleteTask={deleteTask}
+            toggleTask={toggleTask}
           />
           ))
         }

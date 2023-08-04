@@ -289,16 +289,20 @@
 
   //part 6 call closeEditMode at the end. 
   //part 6 define closer editMode as a function that is a empty anoynomous and returns setIsEditing(false) and call prevousfocus.el.focus()
-
+  //part 6  
   import { useState } from 'react'
 
   // custom components
   import CustomForm from './components/CustomForm'
   import TaskList from './components/TaskList'
+import EditForm from './Components/EditForm';
   
   function App() {
     const [tasks, setTasks] = useState([]);
-  
+    const [previousFocusEl, setPreviousFocusEl] = useState(null)
+    const [editedTask, setEditedTask] = useState(null);
+    const [isEditing, setIsEditing] = useState(false);
+    
     const addTask = (task) => {
       setTasks(prevState => [...prevState, task])
     }
@@ -322,19 +326,23 @@
       ? {...t, name: task.name}
       : t
     )))
-    closeEditMode();
-   }
 
-   const CloseEditMode = () => {
-    setIsEditing(false);
-    previousFocusEl.focus();
-   }
+      closeEditMode()
+  }
 
-   const enterEditMode = (task) => {
+  const closeEditMode = () => {
+    setIsEditing(false)
+    previousFocus.El.focus();
+  }
+
+  const enterEditMode = (task) => {
     setEditedTask(task);
-    setIsEditing(true)
-    setPreviousFocusEl(document.activeElement);
-   }
+    setIsEditing(true);
+    setPreviousFocusEl(doucment.activeElement);
+  }
+
+
+   
 
   
     return (
@@ -342,6 +350,16 @@
         <header>
           <h1>My Task List</h1>
         </header>
+        {
+          isEditing && (
+            <EditForm 
+              editedTask={editedTask}
+              updateTask={updateTask}
+              closeEditMode={closeEditMode}
+            />
+          )
+        }
+        
         <CustomForm addTask={addTask}/>
         {tasks && (
           <TaskList
@@ -349,6 +367,7 @@
             deleteTask={deleteTask}
             toggleTask={toggleTask}
             enterEditMode={enterEditMode}
+
           />
         )}
       </div>

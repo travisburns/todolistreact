@@ -147,7 +147,7 @@
 // part 3 Pass a TrashIcon with width 24 height 24
 // part 3 end the button
 
-
+//part 4 add onclick that returns deleteTask(task.id)
 
 
 import { useState } from 'react';

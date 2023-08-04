@@ -79,7 +79,7 @@
 // part 3 within the ul, create a object bracket and create a tasks.map that maps task and returns TaskItem with parameters key equal to task.id, task equal to task
 //part 3 wrap the tasks.map in a tasks.sort where parameters a.b exist and return b.id - a.id in order to sort. 
 
-
+//part 4 add deleteTask property and add its property to the key value pair. 
 
 
 // component import

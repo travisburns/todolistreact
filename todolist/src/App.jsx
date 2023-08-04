@@ -280,7 +280,7 @@
   //part 3 within addTasks set setTasks prevstate to return and arry with the spread of prevstate applied to task
   //part 3 add tasks true render task list with the props tasks equal to task. 
 
-  //part 4 add the delete task function
+  //part 4 add the delete task function and pass its property to TaskList
 
 
   import { useState } from 'react'

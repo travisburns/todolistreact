@@ -283,6 +283,13 @@
   //part 4 add the delete task function and pass its property to TaskList
 
 
+  //part 6 add the UpdateTask function that takes in the task as a parameter and returns a similiar structure as toggleTask
+  //part 6 t.id should be equal to task.id though
+  //part 6 instead of checked it should be name key with the value of task.name
+
+  //part 6 call closeEditMode at the end. 
+  //part 6 define closer editMode as a function that is a empty anoynomous and returns setIsEditing(false) and call prevousfocus.el.focus()
+
   import { useState } from 'react'
 
   // custom components
@@ -309,6 +316,26 @@
     )))
    }
 
+   const updateTask = (task) => {
+    setTasks(prevState => prevState.map(t=> (
+      t.id === task.id
+      ? {...t, name: task.name}
+      : t
+    )))
+    closeEditMode();
+   }
+
+   const CloseEditMode = () => {
+    setIsEditing(false);
+    previousFocusEl.focus();
+   }
+
+   const enterEditMode = (task) => {
+    setEditedTask(task);
+    setIsEditing(true)
+    setPreviousFocusEl(document.activeElement);
+   }
+
   
     return (
       <div className="container">
@@ -321,6 +348,7 @@
             tasks={tasks}
             deleteTask={deleteTask}
             toggleTask={toggleTask}
+            enterEditMode={enterEditMode}
           />
         )}
       </div>

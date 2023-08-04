@@ -296,9 +296,9 @@
       setTasks(prevState => [...prevState, task])
     }
   
-    const deleteTask = (id) => {
-      setTasks(prevState => prevState.filter(t => t.id !== id));
-    }
+   const deleteTask = (id) => {
+    setTasks(prevState => prevState.filter(t => t.id != id) )
+   }
   
     return (
       <div className="container">

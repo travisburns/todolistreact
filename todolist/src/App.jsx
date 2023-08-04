@@ -279,35 +279,41 @@
   //part 3 set a hook with tasks set tasks equal to an array within usestate
   //part 3 within addTasks set setTasks prevstate to return and arry with the spread of prevstate applied to task
   //part 3 add tasks true render task list with the props tasks equal to task. 
-import React, {useState} from 'react'
-import CustomForm from './components/CustomForm'
-import TaskList from './components/TaskList'
-const App = () => {
-const [tasks, setTasks] = useState([])
+
+  //part 4 add the delete task function
 
 
-const addTask = (task) => {
-  setTasks(prevState => [...prevState, task])
-}
+  import { useState } from 'react'
 
-
-
+  // custom components
+  import CustomForm from './components/CustomForm'
+  import TaskList from './components/TaskList'
   
-  return (
-    <div className='container'>
-      <header>
-        <h1>Task List</h1>
-         <CustomForm addTask={addTask}/>
-         {tasks && 
+  function App() {
+    const [tasks, setTasks] = useState([]);
+  
+    const addTask = (task) => {
+      setTasks(prevState => [...prevState, task])
+    }
+  
+    const deleteTask = (id) => {
+      setTasks(prevState => prevState.filter(t => t.id !== id));
+    }
+  
+    return (
+      <div className="container">
+        <header>
+          <h1>My Task List</h1>
+        </header>
+        <CustomForm addTask={addTask}/>
+        {tasks && (
           <TaskList
-          tasks={tasks} 
+            tasks={tasks}
+            deleteTask={deleteTask}
           />
-          }
-      </header>
-    </div>
-    
-  )
-}
-
-export default App
-
+        )}
+      </div>
+    )
+  }
+  
+  export default App

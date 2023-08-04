@@ -165,7 +165,7 @@ const TaskItem = ({ task, deleteTask, toggleTask }) => {
 
   const handleCheckboxChange = (e) =>{
     setIsChecked(!isChecked);
-    toggleTask(task.id)
+    toggleTask(!isChecked)
   }
 
   return (

@@ -300,6 +300,7 @@
     setTasks(prevState => prevState.filter(t => t.id != id) )
    }
 
+  
    const toggleTask = (id) => {
     setTasks(prevState => prevState.map(t=> (
       t.id === id

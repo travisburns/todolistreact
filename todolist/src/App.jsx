@@ -301,7 +301,7 @@
    }
 
    const toggleTask = (id) => {
-    setTasks(prevState => prevState.map(t => (
+    setTasks(prevState => prevState.map(t=> (
       t.id === id
       ? {...t, checked: !t.checked}
       : t

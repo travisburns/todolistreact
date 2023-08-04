@@ -293,7 +293,7 @@
   //part 6 setEditedTask equal to task
   //setEditing()true
   //part 6 setPreviousFocusEl(doucment.activeElement);
-  
+
   import { useState } from 'react'
 
   // custom components
@@ -303,7 +303,7 @@ import EditForm from './Components/EditForm';
   
   function App() {
     const [tasks, setTasks] = useState([]);
-    const [previousFocusEl, setPreviousFocusEl] = useState(null)
+    const [previousFocusEl, setPreviousFocusEl] = useState(null);
     const [editedTask, setEditedTask] = useState(null);
     const [isEditing, setIsEditing] = useState(false);
     
@@ -324,46 +324,45 @@ import EditForm from './Components/EditForm';
     )))
    }
 
+   
    const updateTask = (task) => {
     setTasks(prevState => prevState.map(t=> (
       t.id === task.id
-      ? {...t, name: task.name}
+      ? {...t, name: task.name }
       : t
     )))
+     
+    closeEditMode();
 
-      closeEditMode()
-  }
+   }
 
-  const closeEditMode = () => {
-    setIsEditing(false)
-    previousFocus.El.focus();
-  }
+   const closeEditMode = () => {
+    setIsEditing(false);
+    previousFocusEl.focus();
+   }
 
   const enterEditMode = (task) => {
     setEditedTask(task);
     setIsEditing(true);
-    setPreviousFocusEl(doucment.activeElement);
+    setPreviousFocusEl(document.activeElement);
   }
 
-
-   
-
-  
     return (
       <div className="container">
         <header>
           <h1>My Task List</h1>
         </header>
-        {
-          isEditing && (
-            <EditForm 
-              editedTask={editedTask}
-              updateTask={updateTask}
-              closeEditMode={closeEditMode}
-            />
-          )
-        }
-        
+       {
+        isEditing && (
+          <EditForm 
+            editedTask={editedTask}
+            updateTask={updateTask}
+            closeEditMode={closeEditMode}  
+          />
+        )
+       }
+
+
         <CustomForm addTask={addTask}/>
         {tasks && (
           <TaskList

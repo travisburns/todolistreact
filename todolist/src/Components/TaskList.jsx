@@ -84,7 +84,7 @@
 
 // component import
 import React from 'react'
-import TaskItem from './TaskiTem'
+import TaskItem from './TaskItem'
 
 const TaskList = ({tasks}) => {
   return (
